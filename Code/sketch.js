@@ -33,3 +33,10 @@ function draw() {
     cards[i].show();
   }
 }
+
+function mousePressed() {
+  stage++;
+  if (stage > 4) {
+    stage = 1;
+  }
+}
