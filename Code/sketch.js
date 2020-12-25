@@ -8,7 +8,7 @@ let options = ['A', 'B', 'C', 'D', 'A', 'B', 'C', 'D'];
 let am = 30,
     bm = 10;
 
-let stage = 1,
+let stage = 1, // Max stage is 4: Thinking, 1st Card, 2nd Card, Checking
     picked = [];
 
 function setup() {
