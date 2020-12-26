@@ -5,11 +5,13 @@ These are a list of to-dos for my Matching Game project.
 # General:
   -Make a title screen (Optional):
   
-    -Link the title screen with the game
+   -Link the title screen with the game
   
   -Make music (Optional)
   
   -Add UI (Optional)
+  
+  -First show all cards (Optional)
   
   
  
@@ -38,6 +40,8 @@ These are a list of to-dos for my Matching Game project.
 # PREFERRED ORDER:
   -Define what happens in each stage
   
+  -First show all cards (Optional)
+  
   -Add UI (Optional)
   
   -Make a flipping animation (Optional)
@@ -46,7 +50,7 @@ These are a list of to-dos for my Matching Game project.
   
   -Make a title screen (Optional):
   
-    -Link the title screen with the game
+   -Link the title screen with the game
     
   -Track high times (Optional)
   
