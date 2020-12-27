@@ -21,7 +21,7 @@ function setup() {
       let s = floor(random(options.length));
       cser = options[s];
       options.splice(s, 1);
-      cards.push(new Card((cardsw * x + am / 2) + (cardsw / 2), (cardsh * y + am / 2) + (cardsh / 2), cser, false));
+      cards.push(new Card((cardsw * x + am / 2) + (cardsw / 2), (cardsh * y + am / 2) + (cardsh / 2), cser, true));
     }
   }
 }
@@ -32,11 +32,36 @@ function draw() {
     cards[i].update();
     cards[i].show();
   }
+
+  if (stage == 3) {
+    if (picked.length == 2 && cards[picked[0]].stat == cards[picked[1]].stat) {
+      console.log('You win!');
+      picked = [];
+      setTimeout(() => {
+        stage == 1;
+      }, 2000);
+    } else {
+      console.log('You lose!');
+      picked = [];
+      setTimeout(() => {
+        stage == 1;
+      }, 2000);
+    }
+  }
 }
 
 function mousePressed() {
-  stage++;
-  if (stage > 4) {
-    stage = 1;
+  if (stage == 1 || stage == 2) {
+    for (let i = 0; i < cards.length; i++) {
+      let chos = false;
+      if ((mouseX > cards[i].x - (cardsw - (bm / 2)) / 2) && (mouseX < cards[i].x + (cardsw - (bm / 2)) / 2) && (mouseY > cards[i].y - (cardsw - (bm / 2)) / 2) && (mouseY < cards[i].y + (cardsw - (bm / 2)) / 2)) {
+        if (!chos && picked[0] != i && picked[1] != i) {
+          picked.push(i);
+          cards[i].hidden = false;
+          chos = true;
+          stage++;
+        }
+      }
+    }
   }
 }
